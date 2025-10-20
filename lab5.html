@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Mode Toggle</title>
+<style>
+  
+  body {
+    background-color: violet;
+    color: yellow;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  .image-container img {
+    max-width: 300px;
+    height: auto;
+    border: 2px solid black;
+  }
+
+ 
+  .dark-mode {
+    background-color:violet ;
+    color: #f0f0f0;
+  }
+
+  .dark-mode .image-container img {
+    border-color: #f0f0f0;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+</head>
+
+<body>
+<h1>GERALDINE BAUDEN</h1>
+<p>Light and Dark Mode Toggle Example</p>
+<div class="image-container">
+  
+</div>
+
+<button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+</script>
+</body>
+
+</html>
