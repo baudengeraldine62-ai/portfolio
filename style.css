@@ -1,301 +1,164 @@
-/* Light Mode – Clean Mint theme for Geraldine Bauden Portfolio */
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Geraldine N. Bauden — Portfolio</title>
+  <meta name="description" content="Geraldine Bauden — Diploma IT student portfolio. Projects, education, experience, labs, contact."/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="topbar" role="banner">
+    <div class="brand">
+      <div class="logo">GB</div>
+      <div class="brand-text">
+        <div class="name">Geraldine N. Bauden</div>
+        <div class="tag">Aspiring IT Professional</div>
+      </div>
+    </div>
 
-/* Variables */
-:root {
-  --bg1: #f8fafb;
-  --bg2: #e6fff9;
-  --accent: #00bfa6;
-  --accent2: #00d9ff;
-  --card: rgba(255, 255, 255, 0.9);
-  --muted: #5f6c74;
-  --text: #1a1d1f;
-  --radius: 14px;
-  --maxw: 1200px;
-  --gap: 20px;
-  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-}
+    <nav class="nav" role="navigation" aria-label="Main">
+      <button class="nav-btn" data-target="slide-0">Home</button>
+      <button class="nav-btn" data-target="slide-1">Education</button>
+      <button class="nav-btn" data-target="slide-2">Experience</button>
+      <button class="nav-btn" data-target="slide-3">Projects</button>
+      <button class="nav-btn" data-target="slide-4">Labs</button>
+      <button class="nav-btn" data-target="slide-5">Contact</button>
+    </nav>
+  </header>
 
-/* Base */
-* { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; }
-body {
-  font-family: var(--sans);
-  color: var(--text);
-  background: linear-gradient(135deg, var(--bg1), var(--bg2));
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  <!-- Slides container -->
+  <main class="slides" id="slides" tabindex="0">
+    <!-- Slide 0: Home -->
+    <section class="slide" id="slide-0" data-index="0">
+      <div class="slide-inner hero">
+        <div class="hero-left">
+          <p class="eyebrow">IT 634 • Portfolio</p>
+          <h1>Hi — I’m <span class="accent">Geraldine Bauden</span></h1>
+          <p class="lead">I’m passionate about technology and building practical web systems. I create responsive UI, learn tools, and apply real-world workflows.</p>
+          <div class="hero-actions">
+            <button class="btn" data-target="slide-3">View Projects</button>
+            <button class="btn alt" data-target="slide-5">Contact Me</button>
+          </div>
+          <ul class="contact-quick">
+            <li><strong>Email:</strong> <a href="mailto:baudengeraldine26@gmail.com">baudengeraldine26@gmail.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+639155098824">+63 915 509 8824</a></li>
+            <li><strong>Location:</strong> Philippines</li>
+          </ul>
+        </div>
 
-/* Topbar */
-.topbar {
-  position: fixed;
-  left: 0; right: 0; top: 0;
-  z-index: 80;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 12px 22px;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-.brand { display: flex; align-items: center; gap: 12px; }
-.logo {
-  width: 44px; height: 44px;
-  border-radius: 10px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  display: grid; place-items: center;
-  font-weight: 900; color: white;
-  font-family: monospace;
-}
-.brand-text .name { font-weight: 800; color: var(--text); }
-.brand-text .tag { font-size: 0.85rem; color: var(--muted); }
+        <aside class="hero-right profile-card">
+          <img class="avatar" src="https://scontent.fdvo2-2.fna.fbcdn.net/v/t39.30808-6/519707984_1234341991504683_6734852123141820030_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHOYD4b627jgAO8CCIyXpjHc5fIEbCqhKlzl8gRsKqEqVUjclEKsRkRyhWteg6i-fsuRxdqWsN9Z0OUm5nYuONT&_nc_ohc=JJBs31Wb73EQ7kNvwG5Wp-L&_nc_oc=Admo5LFK9SW8dCpJvwuOGMabU_0YUHy_0OyBNHb9mdOZ51-OWKUlMjKDL78gITg89K8&_nc_zt=23&_nc_ht=scontent.fdvo2-2.fna&_nc_gid=7ywagYyptyBcwPFrqEHtvA&oh=00_AffjZzQcT9onY7q1vTD9dg8ZNzoO0nHZjnmPAV6iGniIOA&oe=68F3AC3E" alt="Geraldine Bauden portrait">
+          <h3>Geraldine N. Bauden</h3>
+          <p class="muted">Diploma — Information Technology (Student)</p>
+          <div class="social">
+            <a href="mailto:baudengeraldine26@gmail.com">✉️</a>
+            <a href="#">💻</a>
+            <a href="#">🔗</a>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-/* Nav */
-.nav { display: flex; gap: 8px; }
-.nav-btn {
-  background: transparent;
-  border: 0;
-  color: var(--muted);
-  font-weight: 700;
-  padding: 8px 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.nav-btn.active {
-  color: var(--text);
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  color: white;
-}
+    <!-- Slide 1: Education -->
+    <section class="slide" id="slide-1" data-index="1">
+      <div class="slide-inner">
+        <h2>Education</h2>
+        <div class="timeline">
+          <div class="timeline-card">
+            <h4>Diploma — Information Technology</h4>
+            <div class="muted">Davao Del Sur State College — 2025–2026</div>
+            <p>Focused on programming, web systems, and hands-on labs.</p>
+          </div>
+          <div class="timeline-card">
+            <h4>Senior High School — GAS</h4>
+            <div class="muted">Sinawilan National High School — 2022–2023</div>
+            <p>General Academic Strand — foundational preparation for college.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* Slides container */
-.slides {
-  height: 100vh;
-  display: flex;
-  gap: 40px;
-  padding: 84px 40px 40px;
-  scroll-snap-type: x mandatory;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-.slides::-webkit-scrollbar { height: 8px; }
-.slides::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 10px;
-}
+    <!-- Slide 2: Experience -->
+    <section class="slide" id="slide-2" data-index="2">
+      <div class="slide-inner">
+        <h2>Experience</h2>
+        <article class="card">
+          <h4>Intern — CCET Office</h4>
+          <div class="muted">July 2025 – August 2026</div>
+          <p>Hands-on learning: document processing, encoding RFQs, scanning, posting on DSSC website, and assisting procurement workflows.</p>
+        </article>
+      </div>
+    </section>
 
-/* Slide */
-.slide {
-  flex: 0 0 100%;
-  height: calc(100vh - 120px);
-  scroll-snap-align: start;
-  display: flex; align-items: center; justify-content: center;
-  padding: 28px;
-}
-.slide-inner {
-  width: 100%; max-width: var(--maxw);
-  display: flex; gap: 28px; align-items: center;
-  background: var(--card);
-  border-radius: 18px;
-  padding: 28px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-}
+    <!-- Slide 3: Projects -->
+    <section class="slide" id="slide-3" data-index="3">
+      <div class="slide-inner">
+        <h2>Projects</h2>
+        <div class="grid projects">
+          <article class="card project-card" data-title="StudyHub — Landing Page" data-desc="Responsive landing page demonstrating layout and accessibility." data-imgs='["https://via.placeholder.com/900x450.png?text=StudyHub"]'>
+            <div class="project-thumb">StudyHub</div>
+            <h4>StudyHub — Landing Page</h4>
+            <div class="muted">HTML • CSS • JS</div>
+            <button class="btn open-btn">Preview</button>
+          </article>
 
-/* Hero Section */
-.hero { display: flex; align-items: center; gap: 32px; }
-.hero-left { flex: 1; min-width: 260px; }
-.eyebrow { color: var(--accent); font-weight: 700; margin-bottom: 8px; }
-h1 { margin: 0; font-size: 2rem; color: var(--text); }
-.accent {
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 900;
-}
-.lead { color: var(--muted); margin: 12px 0; }
-.hero-actions { display: flex; gap: 12px; margin-bottom: 12px; }
-.contact-quick {
-  list-style: none; padding: 0; margin: 12px 0 0;
-  color: var(--muted);
-}
-.contact-quick li { margin-bottom: 8px; }
+          <article class="card project-card" data-title="Inventory Demo" data-desc="Small JS-driven inventory demo with DOM interactions." data-imgs='["https://via.placeholder.com/900x450.png?text=Inventory+Demo"]'>
+            <div class="project-thumb">Inventory</div>
+            <h4>Inventory Demo</h4>
+            <div class="muted">HTML • JavaScript</div>
+            <button class="btn open-btn">Preview</button>
+          </article>
+        </div>
+      </div>
+    </section>
 
-/* Profile Card */
-.profile-card {
-  width: 320px;
-  text-align: center;
-  background: #ffffffcc;
-  border-radius: var(--radius);
-  padding: 18px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-}
-.avatar {
-  width: 100%;
-  max-width: 240px;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: 12px;
-  margin: 0 auto 12px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-.muted { color: var(--muted); }
-.social { display: flex; gap: 10px; justify-content: center; margin-top: 10px; }
-.social a { color: var(--accent); text-decoration: none; font-size: 1.2rem; }
-.social a:hover { transform: scale(1.15); }
+    <!-- Slide 4: Labs -->
+    <section class="slide" id="slide-4" data-index="4">
+      <div class="slide-inner">
+        <h2>Laboratory Activities</h2>
+        <div class="grid projects" id="labsGrid"></div>
+      </div>
+    </section>
 
-/* Cards */
-.card {
-  background: white;
-  padding: 16px;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
-}
-.card h4 { margin: 8px 0; color: var(--text); }
-.card .muted { color: var(--muted); font-size: 0.95rem; }
+    <!-- Slide 5: Contact -->
+    <section class="slide" id="slide-5" data-index="5">
+      <div class="slide-inner">
+        <h2>Contact</h2>
+        <div class="contact-layout">
+          <form id="contactForm" action="https://formspree.io/f/xpwyyooq" method="POST" novalidate>
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required>
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button class="btn" type="submit">Send</button>
+            <p id="formMsg"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
-.grid {
-  display: grid;
-  gap: var(--gap);
-}
-.projects {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-.project-thumb {
-  height: 140px;
-  background: #eaf8f6;
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--muted);
-  font-weight: 700;
-  margin-bottom: 10px;
-}
+  <div class="indicators" id="indicators"></div>
 
-/* Timeline */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.timeline-card {
-  background: white;
-  padding: 16px;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-}
+  <!-- Modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close-btn" id="closeModal">✕</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
 
-/* Contact Form */
-.contact-layout {
-  display: flex; gap: 20px; align-items: flex-start;
-}
-.contact-layout form {
-  flex: 1;
-  background: white;
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-.form-row { margin-bottom: 12px; }
-label { display: block; font-weight: 800; margin-bottom: 6px; color: var(--text); }
-input, textarea {
-  width: 100%; padding: 10px;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: #fdfefe;
-  color: var(--text);
-  outline: none;
-}
-textarea { min-height: 120px; resize: vertical; }
-
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center; gap: 8px;
-  padding: 10px 14px;
-  border-radius: 10px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  color: white;
-  font-weight: 800;
-  border: 0;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.btn:hover { transform: translateY(-2px); }
-.btn.alt {
-  background: transparent;
-  border: 2px solid var(--accent);
-  color: var(--accent);
-}
-
-/* Indicators */
-.indicators {
-  position: fixed; right: 18px; top: 50%;
-  transform: translateY(-50%);
-  display: flex; flex-direction: column; gap: 8px;
-  z-index: 90;
-}
-.indicators button {
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  border: 0;
-  background: rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-.indicators button.active {
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-}
-
-/* Modal */
-.modal {
-  position: fixed; inset: 0;
-  display: none;
-  align-items: center; justify-content: center;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 120;
-}
-.modal.open { display: flex; }
-.modal-card {
-  max-width: 900px;
-  width: calc(100% - 40px);
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-}
-.close-btn {
-  background: transparent;
-  border: 0;
-  color: var(--muted);
-  font-weight: 800;
-  cursor: pointer;
-  float: right;
-}
-
-/* Footer */
-.site-footer {
-  position: fixed;
-  left: 20px;
-  bottom: 18px;
-  color: var(--muted);
-  font-weight: 700;
-  z-index: 80;
-}
-
-/* Responsive: vertical snap on mobile */
-@media (max-width: 860px) {
-  .slides {
-    flex-direction: column;
-    overflow-y: auto; overflow-x: hidden;
-    scroll-snap-type: y mandatory;
-    padding-top: 88px;
-  }
-  .slide {
-    height: auto; min-height: 70vh;
-  }
-  .slide-inner { flex-direction: column; }
-  .topbar { padding: 10px 12px; }
-  .nav { display: none; }
-  .indicators { right: 8px; }
-  .contact-layout { flex-direction: column; }
-}
+  <footer class="site-footer">© <span id="year"></span> Geraldine N. Bauden</footer>
+  <script src="script.js"></script>
+</body>
+</html>
